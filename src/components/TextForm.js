@@ -8,16 +8,19 @@ function TextForm(props) {
     const upperText = () =>{
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to UpperCase", "success");
     }
 
     const lowerText = () =>{
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to LowerCase", "success");
     }
 
     //function to clear the text
     const clearTxt = ()=>{
         setText("");
+        props.showAlert("Text Cleared!", "success");
     }
 
     //function to copy the text to clipboard
@@ -25,6 +28,7 @@ function TextForm(props) {
         let n = document.getElementById("myBox");
         n.select();
         navigator.clipboard.writeText(text);
+        props.showAlert("Text Copied to Clipboard", "success");
     }
 
     //function to write in the text area
@@ -37,6 +41,7 @@ function TextForm(props) {
         let newText = text.split(/[ ]+/);
         // console.log(newText);
         setText(newText.join(" "));
+        props.showAlert("Extra Spaces removed", "success");
     }
 
     let words = text.split(" ").length;
@@ -51,7 +56,7 @@ function TextForm(props) {
         <div className="container">
             <h1 style = {{color: props.mode === "dark"?"white":"black"}}>{props.heading}</h1>
             <div className="mb-3">
-                <textarea className="form-control" id="myBox" value={text} onChange={updateText} style = {{color: props.mode === "dark"?"white":"black", backgroundColor: props.mode === "dark"?"black":"white"}} rows="8"></textarea>
+                <textarea className="form-control" id="myBox" value={text} onChange={updateText} style = {{color: props.mode === "dark"?"white":"black", backgroundColor: props.mode === "dark"?"#404258":"white"}} rows="8"></textarea>
             </div>
             <button className="btn btn-primary mx-1" onClick={upperText}>Convert to UpperCase</button>
             <button className="btn btn-primary mx-1" onClick={lowerText}>Convert to LowerCase</button>

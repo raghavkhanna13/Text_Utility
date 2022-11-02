@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types"
+import './Theme.css'
 
 function Navbar(props) {     //here we pass props to our component 
   return (
@@ -18,14 +19,26 @@ function Navbar(props) {     //here we pass props to our component
               <a className="nav-link" href="/">About</a>
             </li>
           </ul>
-          <div className="form-check form-switch">
+          {/* <div className="form-check form-switch">
             <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
               <label className="form-check-label" htmlFor="flexSwitchCheckDefault"></label>
+          </div> */}
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Custom Themes
+            </button>
+            <ul class="dropdown-menu">
+              <span><button className="themeBtn mx-1" id="blue" onClick={props.toggleMode}></button></span>
+              <span><button className="themeBtn mx-1" id="black" onClick={props.toggleMode}></button></span>
+              <span><button className="themeBtn mx-1" id="green" onClick={props.toggleMode}></button></span>
+              <span><button className="themeBtn mx-1" id="violet" onClick={props.toggleMode}></button></span>
+              <span><button className="themeBtn mx-1" id="white" onClick={props.toggleMode}></button></span>
+            </ul>
           </div>
-          <form className="d-flex" role="search">
+          {/* <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </form> */}
         </div>
       </div>
     </nav>
