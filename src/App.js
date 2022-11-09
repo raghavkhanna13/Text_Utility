@@ -21,38 +21,12 @@ function App() {
   }
 
   const toggleMode = (e) => {
-    // if(mode === "light"){
-    //   setMode("dark");
-    //   document.body.style.backgroundColor = "black";
-    //   showAlert("Dark Mode is Enabled", "success");
-    // }
-    // else{
-    //   setMode("light");
-    //   document.body.style.backgroundColor = "white";
-    //   showAlert("Light Mode is Enabled", "success");
-    // }
-
-    if (e.target.id === "blue") {
-      setMode("dark");
-      document.body.style.backgroundColor = "#0202a9f5";
-      showAlert("Dark Mode is Enabled", "success");
-    }
-    else if (e.target.id === "green") {
-      setMode("dark");
-      document.body.style.backgroundColor = "#026502";
-      showAlert("Dark Mode is Enabled", "success");
-    }
-    else if (e.target.id === "black") {
+    if(mode === "light"){
       setMode("dark");
       document.body.style.backgroundColor = "black";
       showAlert("Dark Mode is Enabled", "success");
     }
-    else if (e.target.id === "violet") {
-      setMode("dark");
-      document.body.style.backgroundColor = "#7e007e";
-      showAlert("Dark Mode is Enabled", "success");
-    }
-    else {
+    else{
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light Mode is Enabled", "success");
